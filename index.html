@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fresh Fish Mali — CRM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <form id="loginForm" class="login-card">
+      <div class="brand-mark">FF</div>
+      <p class="eyebrow">FRESH FISH MALI</p>
+      <h1>CRM & Gestion</h1>
+      <p class="muted">Connectez-vous pour accéder à votre espace de gestion.</p>
+      <label for="email">Adresse e-mail</label>
+      <input id="email" type="email" autocomplete="username" required placeholder="admin@exemple.com">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" autocomplete="current-password" required placeholder="Votre mot de passe">
+      <button class="primary full" type="submit">Se connecter</button>
+      <p id="loginMessage" class="message" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark small">FF</div><div><strong>Fresh Fish Mali</strong><small>CRM & Comptabilité</small></div></div>
+      <nav id="mainNav">
+        <span class="nav-caption">ESPACE DE TRAVAIL</span>
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span><span>Tableau de bord</span></button>
+        <span class="nav-caption nav-caption-spaced">GESTION COMMERCIALE</span>
+        <button class="nav-link" data-page="sales"><span class="nav-icon">↗</span><span>Ventes</span></button>
+        <button class="nav-link" data-page="purchases"><span class="nav-icon">↙</span><span>Achats & approvisionnements</span></button>
+        <button class="nav-link" data-page="customers"><span class="nav-icon">♙</span><span>Clients</span></button>
+        <button class="nav-link" data-page="invoices"><span class="nav-icon">▤</span><span>Facturation</span></button>
+        <button id="debtorsNav" class="nav-link" data-page="debtors"><span class="nav-icon">₣</span><span>Créances clients</span></button>
+        <span class="nav-caption nav-caption-spaced">STOCK & FINANCES</span>
+        <button class="nav-link" data-page="products"><span class="nav-icon">◈</span><span>Produits & stocks</span></button>
+        <button class="nav-link" data-page="stockValue"><span class="nav-icon">▤</span><span>Stock valorisé</span></button>
+        <button id="treasuryNav" class="nav-link" data-page="treasury"><span class="nav-icon">₣</span><span>Trésorerie</span></button>
+        <button class="nav-link" data-page="expenses"><span class="nav-icon">−</span><span>Dépenses</span></button>
+        <button id="accountingNav" class="nav-link" data-page="accounting"><span class="nav-icon">▤</span><span>Comptabilité</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="profile-summary"><span class="profile-avatar">FF</span><span id="userEmail"></span></div><button id="logoutBtn" class="logout">Déconnexion</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+        <div class="topbar-title"><p class="eyebrow">FRESH FISH MALI <span class="topbar-divider">/</span> ESPACE DE GESTION</p><h1 id="pageTitle">Tableau de bord</h1></div>
+        <div class="topbar-tools"><label class="global-search"><span>⌕</span><input id="moduleSearch" type="search" placeholder="Rechercher un module…" aria-label="Rechercher un module"><kbd>⌘ K</kbd></label><button id="notificationBtn" class="icon-button" aria-label="Afficher les alertes de stock" title="Alertes de stock">♧<i id="notificationDot" class="notification-dot hidden"></i></button><button id="headerQuickAction" class="primary header-action">+ Nouvelle vente</button><div class="topbar-note">XOF <span>•</span> Bamako</div></div>
+      </header>
+      <section id="pageContent"></section>
+      <div id="appMessage" class="toast" aria-live="polite"></div>
+    </main>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
